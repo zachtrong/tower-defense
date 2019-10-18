@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TowerDefense</string>
+    <string name="start">Start</string>
+    <string name="game_play_view">GAME PLAY VIEW</string>
+    <string name="high_score">High Score</string>
+    <string name="tower_defense">TOWER DEFENSE</string>
+</resources>
