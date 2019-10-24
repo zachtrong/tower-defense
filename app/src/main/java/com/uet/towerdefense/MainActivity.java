@@ -1,7 +1,5 @@
 package com.uet.towerdefense;
 
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,35 +15,36 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.btn_start)
-    Button startButton;
-    @BindView(R.id.btn_high_score)
-    Button highScoreButton;
-    @BindView(R.id.btn_guide)
-    Button guideButton;
+  @BindView(R.id.btn_start)
+  Button startButton;
 
-    @Override
-    protected int getLayoutRes() {
-        return R.layout.activity_main;
-    }
+  @BindView(R.id.btn_high_score)
+  Button highScoreButton;
 
-    @Override
-    protected void setupListener() {
-        startButton.setOnClickListener(view -> {
-            Toast.makeText(this, "this is a dummy toast", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, GamePlayActivity.class));
+  @BindView(R.id.btn_guide)
+  Button guideButton;
+
+  @Override
+  protected int getLayoutRes() {
+    return R.layout.activity_main;
+  }
+
+  @Override
+  protected void setupListener() {
+    startButton.setOnClickListener(
+        view -> {
+          startActivity(new Intent(this, GamePlayActivity.class));
         });
-        highScoreButton.setOnClickListener(view -> {
-            startActivity(new Intent(this, HighScoreActivity.class));
+    highScoreButton.setOnClickListener(
+        view -> {
+          startActivity(new Intent(this, HighScoreActivity.class));
         });
-        guideButton.setOnClickListener(view ->{
-
-            startActivity(new Intent(this, GuideActivity.class));
+    guideButton.setOnClickListener(
+        view -> {
+          startActivity(new Intent(this, GuideActivity.class));
         });
-    }
+  }
 
-    @Override
-    protected void populateData() {
-    }
+  @Override
+  protected void populateData() {}
 }
-

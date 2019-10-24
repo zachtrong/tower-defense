@@ -42,4 +42,5 @@
         Tốc độ bắn: 60 \n
         Bắn các mục tiêu ở cự li gần
     </string>
+    <string name="pref_score">pref_score</string>
 </resources>

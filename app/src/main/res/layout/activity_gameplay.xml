@@ -2,18 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gamefield"
     style="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:text="Score"
+        android:layout_marginTop="@dimen/title_text_size"
+        android:layout_marginStart="@dimen/title_text_size"
+        android:textColor="#fff"
+        android:id="@+id/tv_score"
+        style="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/game_play_view"
-        style="@style/CustomTextView"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="1000"
+        android:layout_marginStart="@dimen/title_text_size"
+        android:textColor="#fff"
+        android:id="@+id/tv_score_number"
+        style="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintTop_toBottomOf="@id/tv_score"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_increase"
+        android:text="INCREASE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
