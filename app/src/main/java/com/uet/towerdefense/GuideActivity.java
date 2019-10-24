@@ -1,9 +1,9 @@
 package com.uet.towerdefense;
 
-public class HighScoreActivity extends BaseActivity {
+public class GuideActivity extends BaseActivity {
     @Override
     protected int getLayoutRes() {
-        return R.layout.activity_high_score;
+        return R.layout.activity_guide;
     }
 
     @Override

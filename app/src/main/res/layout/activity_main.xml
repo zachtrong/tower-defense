@@ -8,12 +8,12 @@
     tools:context="com.uet.towerdefense.MainActivity">
 
     <TextView
-        android:text="@string/tower_defense"
         style="@style/CustomTextView"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="@string/tower_defense"
+        app:layout_constraintBottom_toTopOf="@id/btn_start" />
 
     <Button
         android:id="@+id/btn_start"
@@ -24,12 +24,26 @@
         android:layout_marginHorizontal="@dimen/default_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <Button
-        android:backgroundTint="@android:color/holo_purple"
         android:id="@+id/btn_high_score"
-        app:layout_constraintTop_toBottomOf="@id/btn_start"
-        android:text="@string/high_score"
-        android:layout_marginHorizontal="@dimen/default_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="@string/high_score"
+        app:layout_constraintTop_toBottomOf="@id/btn_start"
+        tools:layout_editor_absoluteX="40dp" />
+    <Button
+        android:id="@+id/btn_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#ff0"
+        android:text="@string/guide"
+        app:layout_constraintTop_toBottomOf="@id/btn_high_score"
+        tools:layout_editor_absoluteX="40dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

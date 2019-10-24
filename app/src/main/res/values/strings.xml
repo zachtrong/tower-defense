@@ -4,4 +4,42 @@
     <string name="game_play_view">GAME PLAY VIEW</string>
     <string name="high_score">High Score</string>
     <string name="tower_defense">TOWER DEFENSE</string>
+    <string name="guide">Guide</string>
+    <string name="guideContent">
+        1: Khi bắt đầu trận đấu, người chơi sẽ nhận được 4000 coin dùng để mua các tháp, tiêu diệt quái. \n
+        2: Khi tiêu diệt được: \n
+            Smaller người chơi nhận được 400 coin. \n
+            Tanker người chơi nhận được 700 coin. \n
+            Boss người chơi nhận được 2000 coin. \n
+        3: khi có 3 quái thú bất kì đi qua vạch đích, thì người chơi sẽ bị xử thua cuộc.
+    </string>
+    <string name="boss">
+        Boss \n
+        Máu: 1000\n
+        Giáp: 50
+    </string>
+    <string name="tanker">
+        Tanker \n
+        Máu: 350\n
+        Giáp: 30
+    </string>
+    <string name="smaller">
+        Smaller \n
+        Máu: 200\n
+        Giáp: 100
+    </string>
+    <string name="sniper">
+        Sniper \n
+        Giá: 6000 coin \n
+        Tấn công: 150\n
+        Tốc độ bắn: 20 \n
+        Bắn được các mục tiêu ở cự li xa
+    </string>
+    <string name="machinegun">
+        Machinegun \n
+        Giá: 2000 coin \n
+        Tấn công: 50\n
+        Tốc độ bắn: 60 \n
+        Bắn các mục tiêu ở cự li gần
+    </string>
 </resources>
