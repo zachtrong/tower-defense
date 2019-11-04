@@ -23,7 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutRes());
         ButterKnife.bind(this);
 
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+       // sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         setupListener();
         populateData();
@@ -36,11 +36,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void populateData();
 
-    public SharedPreferences getSharedPreferences() {
+    /*public SharedPreferences getSharedPreferences() {
         return sharedPreferences;
     }
 
     public void setSharedPreferences(SharedPreferences sharedPreferences) {
         this.sharedPreferences = sharedPreferences;
-    }
+    }*/
 }

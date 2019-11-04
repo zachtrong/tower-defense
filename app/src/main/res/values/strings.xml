@@ -14,32 +14,32 @@
         3: khi có 3 quái thú bất kì đi qua vạch đích, thì người chơi sẽ bị xử thua cuộc.
     </string>
     <string name="boss">
-        Boss \n
+        Boss\n
         Máu: 1000\n
         Giáp: 50
     </string>
     <string name="tanker">
-        Tanker \n
+        Tanker\n
         Máu: 350\n
         Giáp: 30
     </string>
     <string name="smaller">
-        Smaller \n
+        Smaller\n
         Máu: 200\n
         Giáp: 100
     </string>
     <string name="sniper">
-        Sniper \n
-        Giá: 6000 coin \n
+        Sniper\n
+        Giá: 6000 coin\n
         Tấn công: 150\n
-        Tốc độ bắn: 20 \n
+        Tốc độ bắn: 20\n
         Bắn được các mục tiêu ở cự li xa
     </string>
     <string name="machinegun">
-        Machinegun \n
-        Giá: 2000 coin \n
+        Machinegun\n
+        Giá: 2000 coin\n
         Tấn công: 50\n
-        Tốc độ bắn: 60 \n
+        Tốc độ bắn: 60\n
         Bắn các mục tiêu ở cự li gần
     </string>
     <string name="pref_score">pref_score</string>
