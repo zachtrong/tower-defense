@@ -26,11 +26,15 @@
         <activity
             android:name=".BuyTowerActivity"
             android:screenOrientation="landscape"
+<<<<<<< HEAD
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".CustomGameFieldActivity"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />
+=======
+            tools:ignore="LockedOrientationActivity"/>
+>>>>>>> 59db53a232b4c272920ddab6d5a8969954413784
 
 
     </application>
