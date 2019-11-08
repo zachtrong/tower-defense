@@ -22,7 +22,7 @@ import static com.uet.towerdefense.BuyTowerActivity.RESULT_SNIPER;
 import static com.uet.towerdefense.BuyTowerActivity.RESULT_TOWERNULL;
 import static java.lang.Integer.parseInt;
 
-public class GamePlayActivity extends BaseActivity {
+public class GameFieldActivity extends BaseActivity {
   public static int returnData;
   public static int t = 1;
 

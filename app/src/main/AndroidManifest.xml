@@ -10,24 +10,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            >
+        <activity android:name=".GameStageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GuideActivity"/>
-        <activity android:name=".GamePlayActivity"
+        <activity android:name=".GuideActivity" />
+        <activity
+            android:name=".GameFieldActivity"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name=".HighScoreActivity"/>
-        <activity android:name=".BuyTowerActivity"
+        <activity android:name=".HighScoreActivity" />
+        <activity
+            android:name=".BuyTowerActivity"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-
-
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".CustomGameFieldActivity"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
 
 
     </application>

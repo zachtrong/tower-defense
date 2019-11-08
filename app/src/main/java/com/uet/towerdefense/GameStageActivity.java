@@ -1,20 +1,11 @@
 package com.uet.towerdefense;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class GameStageActivity extends BaseActivity {
 
   @BindView(R.id.btn_start)
   Button startButton;
@@ -35,7 +26,7 @@ public class MainActivity extends BaseActivity {
   protected void setupListener() {
     startButton.setOnClickListener(
         view -> {
-          startActivity(new Intent(this, GamePlayActivity.class));
+          startActivity(new Intent(this, GameFieldActivity.class));
         });
     highScoreButton.setOnClickListener(
         view -> {

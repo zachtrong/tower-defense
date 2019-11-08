@@ -4,6 +4,8 @@ import android.view.ViewGroup;
 
 import com.uet.towerdefense.R;
 
+import static com.uet.towerdefense.Constants.BASE_AMOUNT_HEALTH_ARMOR;
+
 public class TankerEnemy extends Enemy {
   TankerEnemy(ViewGroup parent) {
     super(parent);

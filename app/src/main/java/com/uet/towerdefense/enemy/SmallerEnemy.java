@@ -4,6 +4,9 @@ import android.view.ViewGroup;
 
 import com.uet.towerdefense.R;
 
+import static com.uet.towerdefense.Constants.BASE_AMOUNT_HEALTH_ARMOR;
+import static com.uet.towerdefense.Constants.BASE_SPEED;
+
 public class SmallerEnemy extends Enemy {
   SmallerEnemy(ViewGroup parent) {
     super(parent);
