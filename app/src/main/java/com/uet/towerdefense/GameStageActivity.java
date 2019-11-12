@@ -30,7 +30,7 @@ public class GameStageActivity extends BaseActivity {
         });
     highScoreButton.setOnClickListener(
         view -> {
-          startActivity(new Intent(this, HighScoreActivity.class));
+          startActivity(new Intent(this, CustomGameFieldActivity.class));
         });
     guideButton.setOnClickListener(
          view -> {

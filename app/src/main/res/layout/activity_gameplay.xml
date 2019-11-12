@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/monster"
+        android:layout_marginTop="100dp"
         android:layout_width="65dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,6 +20,8 @@
 
     <ImageButton
         android:id="@+id/btn_tower"
+        android:layout_marginTop="100dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FF5722"
@@ -32,6 +35,8 @@
 
     <ImageButton
         android:id="@+id/btn_tower2"
+        android:layout_marginTop="200dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FF5722"
@@ -46,6 +51,8 @@
 
     <ImageButton
         android:id="@+id/btn_tower3"
+        android:layout_marginTop="300dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FF5722"

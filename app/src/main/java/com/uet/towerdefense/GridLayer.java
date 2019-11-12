@@ -2,8 +2,11 @@ package com.uet.towerdefense;
 
 import android.os.CountDownTimer;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.uet.towerdefense.enemy.Enemy;
+
+import butterknife.BindView;
 
 public class GridLayer {
   public static final int OBJECT_SIZE = 10;
@@ -32,6 +35,9 @@ public class GridLayer {
       @Override
       public void onTick(long millisUntilFinished) {
         enemy.moveRight();
+        enemy.moveDown();
+
+
       }
 
       @Override

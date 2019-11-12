@@ -24,6 +24,6 @@ public class NormalTower extends Tower {
 
   @Override
   public int getDrawable() {
-    return R.drawable.normal_enemy;
+    return R.drawable.normal_tower;
   }
 }
