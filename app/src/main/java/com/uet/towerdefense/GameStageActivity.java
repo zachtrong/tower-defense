@@ -1,9 +1,14 @@
 package com.uet.towerdefense;
 
 import android.content.Intent;
+import android.graphics.Point;
+import android.view.Display;
 import android.widget.Button;
 
 import butterknife.BindView;
+
+import static com.uet.towerdefense.Constants.GET_HEIGHT;
+import static com.uet.towerdefense.Constants.GET_WIDTH;
 
 public class GameStageActivity extends BaseActivity {
 
@@ -24,6 +29,13 @@ public class GameStageActivity extends BaseActivity {
 
   @Override
   protected void setupListener() {
+
+      Display display = getWindowManager().getDefaultDisplay();
+      Point size = new Point();
+      display.getSize(size);
+      GET_WIDTH = size.x;
+      GET_HEIGHT = size.y;
+
     startButton.setOnClickListener(
         view -> {
           startActivity(new Intent(this, GameFieldActivity.class));
