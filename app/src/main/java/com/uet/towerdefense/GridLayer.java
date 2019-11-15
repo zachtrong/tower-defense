@@ -26,7 +26,7 @@ public class GridLayer {
   void addEnemy(Enemy enemy) {
     parent.addView(enemy.getView());
     enemy.setX(0);
-    enemy.setY((int) (30 * per100Height));
+    enemy.setY((int) (28 * per100Height));
     enemy.applyMove();
   }
 
@@ -55,11 +55,57 @@ public class GridLayer {
   }
 
   private EnemyDirection changeEnemyDirection(Enemy enemy, EnemyDirection direction) {
-    if (enemy.getX() > per100Width * 19 && enemy.getY() < per100Height * 40) {
-      if (direction == EnemyDirection.RIGHT) {
+    if(enemy.getX()>=18.28*per100Width -1 && enemy.getX()<=18.29*per100Width+1)
+    {
+      if(enemy.getY()<80.55*per100Height)
+      {
         return EnemyDirection.DOWN;
       }
     }
+
+    if(enemy.getY()>=80.55*per100Height-2&&enemy.getY()<=80.56*per100Height+2)
+    {
+      if(enemy.getX()<33.2*per100Width)
+      {
+        return EnemyDirection.RIGHT;
+      }
+    }
+
+    if(enemy.getX()>=33.2*per100Width-2&&enemy.getX()<=33.3*per100Width+2)
+    {
+      if(enemy.getY()>6.94*per100Height)
+      {
+        return EnemyDirection.UP;
+      }
+    }
+
+    if(enemy.getY()>=6.94*per100Height-2&&enemy.getY()<=6.95*per100Height+2)
+    {
+      if(enemy.getX()<84.76*per100Width)
+      {
+       return EnemyDirection.RIGHT;
+      }
+    }
+
+    if(enemy.getX()>=84.76*per100Width-2&&enemy.getX()<=84.76*per100Width+2)
+    {
+      if(enemy.getY()<38.19*per100Height)
+      {
+        return EnemyDirection.DOWN;
+      }
+    }
+
+    if(enemy.getY()>=38.19*per100Height-2&&enemy.getY()<=38.19*per100Height+2)
+    {
+
+        return EnemyDirection.RIGHT;
+
+    }
+//    if (enemy.getX() > per100Width * 19 && enemy.getY() < per100Height * 38) {
+//      if (direction == EnemyDirection.RIGHT) {
+//        return EnemyDirection.DOWN;
+//      }
+//    }
     return direction;
   }
 
