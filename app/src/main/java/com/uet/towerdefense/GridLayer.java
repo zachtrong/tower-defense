@@ -2,13 +2,18 @@ package com.uet.towerdefense;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
+
+import androidx.core.util.Consumer;
 
 import com.uet.towerdefense.enemy.Enemy;
 import com.uet.towerdefense.enemy.EnemyDirection;
+import com.uet.towerdefense.tower.PlaceholderTower;
+import com.uet.towerdefense.tower.Tower;
+import com.uet.towerdefense.util.Point;
 
-import static com.uet.towerdefense.Constants.PER100;
+
 import static com.uet.towerdefense.Constants.SCREEN_HEIGHT;
 import static com.uet.towerdefense.Constants.SCREEN_WIDTH;
 
@@ -16,11 +21,30 @@ public class GridLayer {
   private FrameLayout parent;
   private Handler handler = new Handler(Looper.getMainLooper());
   private double per100Width, per100Height;
+  private Consumer<Tower> callbackTower;
 
-  GridLayer(FrameLayout parent) {
+  GridLayer(FrameLayout parent, Consumer<Tower> callbackTower) {
     this.parent = parent;
+    this.callbackTower = callbackTower;
+
     per100Width = ScreenSizeManager.getInstance().getPer100Width();
     per100Height = ScreenSizeManager.getInstance().getPer100Height();
+    setupTower();
+  }
+
+  private void setupTower() {
+    createPlaceHolderTower(25, 30);
+    createPlaceHolderTower(25, 73);
+    createPlaceHolderTower(40, 20);
+    createPlaceHolderTower(40, 60);
+    createPlaceHolderTower(80, 20);
+  }
+
+  private void createPlaceHolderTower(int perWidth, int perHeight) {
+    PlaceholderTower tower = new PlaceholderTower(parent);
+    tower.setPosition(new Point(per100Width * perWidth, per100Height * perHeight));
+    parent.addView(tower.getView());
+    tower.getView().setOnClickListener(v -> callbackTower.accept(tower));
   }
 
   void addEnemy(Enemy enemy) {
@@ -51,7 +75,8 @@ public class GridLayer {
     }
 
     EnemyDirection newDirection = changeEnemyDirection(enemy, direction);
-    handler.postDelayed(() -> moveEnemyWithDirection(enemy, newDirection), Constants.DEFAULT_DELAY_MS);
+    handler.postDelayed(
+        () -> moveEnemyWithDirection(enemy, newDirection), Constants.DEFAULT_DELAY_MS);
   }
 
   private EnemyDirection changeEnemyDirection(Enemy enemy, EnemyDirection direction) {
