@@ -2,31 +2,30 @@ package com.uet.towerdefense.tower;
 
 import android.view.ViewGroup;
 
-import com.uet.towerdefense.Constants;
 import com.uet.towerdefense.R;
 
-public class MachineGunTower extends Tower {
-  MachineGunTower(ViewGroup parent) {
+public class PlaceholderTower extends Tower {
+  public PlaceholderTower(ViewGroup parent) {
     super(parent);
   }
 
   @Override
   int getFireSpeed() {
-    return Constants.BASE_SPEED;
+    return 0;
   }
 
   @Override
   int getRange() {
-    return Constants.BASE_FIRE_RANGE;
+    return 0;
   }
 
   @Override
   int getDamage() {
-    return Constants.BASE_FIRE_DAMAGE;
+    return 0;
   }
 
   @Override
   public int getDrawable() {
-    return R.drawable.machineguntower;
+    return R.drawable.buytower;
   }
 }
