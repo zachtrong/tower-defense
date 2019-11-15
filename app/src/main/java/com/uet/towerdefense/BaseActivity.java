@@ -38,8 +38,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        SCREEN_WIDTH = size.x;
-        SCREEN_HEIGHT = size.y;
+        ScreenSizeManager.getInstance().setWidth(size.x);
+        ScreenSizeManager.getInstance().setHeight(size.y);
     }
 
     @LayoutRes

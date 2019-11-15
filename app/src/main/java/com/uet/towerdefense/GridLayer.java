@@ -2,29 +2,36 @@ package com.uet.towerdefense;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.uet.towerdefense.enemy.Enemy;
 import com.uet.towerdefense.enemy.EnemyDirection;
 
+import static com.uet.towerdefense.Constants.PER100;
 import static com.uet.towerdefense.Constants.SCREEN_HEIGHT;
 import static com.uet.towerdefense.Constants.SCREEN_WIDTH;
 
 public class GridLayer {
-
-  public static final int OBJECT_SIZE = 10;
   private FrameLayout parent;
   private Handler handler = new Handler(Looper.getMainLooper());
+  private double per100Width, per100Height;
 
   GridLayer(FrameLayout parent) {
     this.parent = parent;
+    per100Width = ScreenSizeManager.getInstance().getPer100Width();
+    per100Height = ScreenSizeManager.getInstance().getPer100Height();
   }
 
   void addEnemy(Enemy enemy) {
     parent.addView(enemy.getView());
     enemy.setX(0);
-    enemy.setY((int) (0.2681 * SCREEN_WIDTH));
+    enemy.setY((int) (30 * per100Height));
     enemy.applyMove();
+  }
+
+  public void moveEnemyWithDirectionStart(Enemy enemy) {
+    moveEnemyWithDirection(enemy, EnemyDirection.RIGHT);
   }
 
   public void moveEnemyWithDirection(Enemy enemy, EnemyDirection direction) {
@@ -43,9 +50,17 @@ public class GridLayer {
         break;
     }
 
-    // handle direction
+    EnemyDirection newDirection = changeEnemyDirection(enemy, direction);
+    handler.postDelayed(() -> moveEnemyWithDirection(enemy, newDirection), Constants.DEFAULT_DELAY_MS);
+  }
 
-    handler.postDelayed(() -> moveEnemyWithDirection(enemy, direction), Constants.DEFAULT_DELAY_MS);
+  private EnemyDirection changeEnemyDirection(Enemy enemy, EnemyDirection direction) {
+    if (enemy.getX() > per100Width * 19 && enemy.getY() < per100Height * 40) {
+      if (direction == EnemyDirection.RIGHT) {
+        return EnemyDirection.DOWN;
+      }
+    }
+    return direction;
   }
 
   @Deprecated
