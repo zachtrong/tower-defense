@@ -7,8 +7,9 @@ public class Constants {
   public static final int BASE_FIRE_DAMAGE = 100;
   public static final int BASE_AMOUNT_HEALTH_ARMOR = 100;
   public static final int BASE_REWARD = 100;
-  public static int GET_WIDTH=0;
-  public static int GET_HEIGHT=0;
-  public static int getright=0;
-  public static int getdown=0;
+  public static int SCREEN_WIDTH =0;
+  public static int SCREEN_HEIGHT =0;
+
+  public static final double PER100 = 0.01;
+  public static final long DEFAULT_DELAY_MS = 20;
 }

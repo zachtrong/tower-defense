@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Display;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
+
+import static com.uet.towerdefense.Constants.SCREEN_HEIGHT;
+import static com.uet.towerdefense.Constants.SCREEN_WIDTH;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -23,10 +28,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutRes());
         ButterKnife.bind(this);
 
-       // sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
+        updateScreenWidthHeight();
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         setupListener();
         populateData();
+    }
+
+    private void updateScreenWidthHeight() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        SCREEN_WIDTH = size.x;
+        SCREEN_HEIGHT = size.y;
     }
 
     @LayoutRes
