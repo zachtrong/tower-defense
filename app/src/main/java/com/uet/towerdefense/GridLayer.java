@@ -14,8 +14,6 @@ import com.uet.towerdefense.tower.Tower;
 import com.uet.towerdefense.util.Point;
 
 
-import static com.uet.towerdefense.Constants.SCREEN_HEIGHT;
-import static com.uet.towerdefense.Constants.SCREEN_WIDTH;
 
 public class GridLayer {
   private FrameLayout parent;

@@ -80,6 +80,7 @@ public class CustomGameFieldActivity extends BaseActivity {
         gameFieldLayout.addView(machineGunTower.getView());
         machineGunTower.getView().setOnClickListener(v ->
         {
+          point = machineGunTower.getPosition();
           gameFieldLayout.removeView(machineGunTower.getView());
           buyTower();
         });
@@ -91,6 +92,7 @@ public class CustomGameFieldActivity extends BaseActivity {
         sniperTower.setPosition(point);
         gameFieldLayout.addView(sniperTower.getView());
         sniperTower.getView().setOnClickListener(v -> {
+          point = sniperTower.getPosition();
           gameFieldLayout.removeView(sniperTower.getView());
           buyTower();
         });
@@ -101,6 +103,7 @@ public class CustomGameFieldActivity extends BaseActivity {
         normalTower.setPosition(point);
         gameFieldLayout.addView(normalTower.getView());
         normalTower.getView().setOnClickListener(v -> {
+          point = normalTower.getPosition();
           gameFieldLayout.removeView(normalTower.getView());
           buyTower();
         });
@@ -110,7 +113,7 @@ public class CustomGameFieldActivity extends BaseActivity {
         placeholderTower.setPosition(point);
         gameFieldLayout.addView(placeholderTower.getView());
         placeholderTower.getView().setOnClickListener(v -> {
-
+          point = placeholderTower.getPosition();
           gameFieldLayout.removeView(placeholderTower.getView());
           buyTower();
         });
