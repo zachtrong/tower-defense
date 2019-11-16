@@ -6,7 +6,7 @@ import com.uet.towerdefense.Constants;
 import com.uet.towerdefense.R;
 
 public class MachineGunTower extends Tower {
-  MachineGunTower(ViewGroup parent) {
+  public MachineGunTower(ViewGroup parent) {
     super(parent);
   }
 

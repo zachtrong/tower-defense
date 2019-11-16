@@ -9,7 +9,7 @@ import static com.uet.towerdefense.Constants.BASE_FIRE_RANGE;
 import static com.uet.towerdefense.Constants.BASE_SPEED;
 
 public class NormalTower extends Tower {
-  NormalTower(ViewGroup parent) {
+  public NormalTower(ViewGroup parent) {
     super(parent);
   }
 

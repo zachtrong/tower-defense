@@ -34,7 +34,7 @@ public class GridLayer {
 
   private void setupTower() {
     createPlaceHolderTower(25, 30);
-    createPlaceHolderTower(25, 73);
+    createPlaceHolderTower(25, 70);
     createPlaceHolderTower(40, 20);
     createPlaceHolderTower(40, 60);
     createPlaceHolderTower(80, 20);

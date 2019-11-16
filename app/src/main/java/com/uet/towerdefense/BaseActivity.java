@@ -49,11 +49,4 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void populateData();
 
-    /*public SharedPreferences getSharedPreferences() {
-        return sharedPreferences;
-    }
-
-    public void setSharedPreferences(SharedPreferences sharedPreferences) {
-        this.sharedPreferences = sharedPreferences;
-    }*/
 }

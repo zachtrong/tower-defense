@@ -42,5 +42,12 @@
         Tốc độ bắn: 60\n
         Bắn các mục tiêu ở cự li gần
     </string>
+    <string name="normaltower">
+        Normal Tower\n
+        Giá: 3000 coin\n
+        Tấn công: 100\n
+        Tốc độ bắn: 40\n
+        Bắn các mục tiêu ở cự trung bình
+    </string>
     <string name="pref_score">pref_score</string>
 </resources>

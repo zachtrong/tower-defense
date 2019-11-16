@@ -25,10 +25,7 @@
             tools:ignore="LockedOrientationActivity" />
         <activity android:name=".HighScoreActivity" />
         <activity
-            android:name=".BuyTowerActivity"
-            android:screenOrientation="landscape"
-
-            tools:ignore="LockedOrientationActivity" />
+            android:name=".BuyTowerActivity" />
         <activity
             android:name=".CustomGameFieldActivity"
             android:screenOrientation="landscape"

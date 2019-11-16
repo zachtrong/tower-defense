@@ -9,7 +9,7 @@ import static com.uet.towerdefense.Constants.BASE_FIRE_RANGE;
 import static com.uet.towerdefense.Constants.BASE_SPEED;
 
 public class SniperTower extends Tower {
-  SniperTower(ViewGroup parent) {
+  public SniperTower(ViewGroup parent) {
     super(parent);
   }
 

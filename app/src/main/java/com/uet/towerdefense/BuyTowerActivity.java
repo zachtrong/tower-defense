@@ -8,10 +8,12 @@ import butterknife.BindView;
 
 public class BuyTowerActivity extends BaseActivity {
     public static final String KEY_SET_TOWER_MACHINEGUN ="SETTOWER" ;
-    public static final int RESULT_SNIPER =1912 ;
-    public static final int RESULT_MACHINEGUN =0230 ;
+    public static final int RESULT_SNIPER = 1912 ;
+    public static final int RESULT_MACHINEGUN = 0230 ;
+    public static final int RESULT_NORMALTOWE = 2011 ;
     public static final int RESULT_TOWERNULL = 1234;
-    public static final int RESULT_CANCELBUY =4321 ;
+    public static final int RESULT_CANCELBUY = 4321 ;
+
     @BindView(R.id.btn_buy_machinegun)
     Button buyMachinegun;
 
@@ -24,8 +26,12 @@ public class BuyTowerActivity extends BaseActivity {
     @BindView(R.id.btn_sell_sniper)
     Button sellSniper;
 
-    @BindView(R.id.btn_cancel)
-    Button cancel;
+    @BindView(R.id.btn_buy_normal_tower)
+    Button buyNormalTower;
+
+    @BindView(R.id.btn_sell_normal_tower)
+    Button sellNormalTower;
+
 
 
     @Override
@@ -55,43 +61,39 @@ public class BuyTowerActivity extends BaseActivity {
             setTowerNull();
 
         });
-        cancel.setOnClickListener( view ->{
+        buyNormalTower.setOnClickListener( view ->{
 
-            setCancelBuy();
+            setTowerNormal();
+        });
+        sellNormalTower.setOnClickListener( view ->{
+
+            setTowerNull();
 
         });
 
     }
 
-    private void setCancelBuy() {
-        String setcancelbuy="";
+    private void setTowerNormal() {
         Intent intent=new Intent();
-        intent.putExtra("setcancelbuy",setcancelbuy);
-        setResult(RESULT_CANCELBUY,intent);
+        setResult(RESULT_NORMALTOWE,intent);
         finish();
     }
 
     private void setTowerSniper() {
-        String machinegun=String.valueOf(R.drawable.snipertower);
         Intent intent=new Intent();
-        intent.putExtra("sniper",machinegun);
         setResult(RESULT_SNIPER,intent);
         finish();
 
     }
 
     public void setTowerMachinegun() {
-        String machinegun=String.valueOf(R.drawable.machineguntower);
         Intent intent=new Intent();
-        intent.putExtra("machinegun",machinegun);
         setResult(RESULT_MACHINEGUN,intent);
         finish();
     }
 
     private void setTowerNull() {
-        String settowernull="";
         Intent intent=new Intent();
-        intent.putExtra("settowernull",settowernull);
         setResult(RESULT_TOWERNULL,intent);
         finish();
     }
