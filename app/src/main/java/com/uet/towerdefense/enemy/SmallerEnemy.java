@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 import com.uet.towerdefense.R;
 
 import static com.uet.towerdefense.Constants.BASE_AMOUNT_HEALTH_ARMOR;
+import static com.uet.towerdefense.Constants.BASE_REWARD;
 import static com.uet.towerdefense.Constants.BASE_SPEED;
 
 public class SmallerEnemy extends Enemy {
@@ -34,6 +35,6 @@ public class SmallerEnemy extends Enemy {
 
   @Override
   public int getReward() {
-    return (int) (BASE_SPEED * 0.25);
+    return (int) (BASE_REWARD * 0.25);
   }
 }

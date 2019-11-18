@@ -74,7 +74,8 @@ public class GridLayer {
 
     EnemyDirection newDirection = changeEnemyDirection(enemy, direction);
     handler.postDelayed(
-        () -> moveEnemyWithDirection(enemy, newDirection), Constants.DEFAULT_DELAY_MS);
+        () -> moveEnemyWithDirection(enemy, newDirection),
+        (int) (Constants.DEFAULT_DELAY_MS * (1 - enemy.getMovingSpeed() * 1f / 100)));
   }
 
   private EnemyDirection changeEnemyDirection(Enemy enemy, EnemyDirection direction) {
