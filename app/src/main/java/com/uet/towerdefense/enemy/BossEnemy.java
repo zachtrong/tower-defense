@@ -9,7 +9,7 @@ import static com.uet.towerdefense.Constants.BASE_REWARD;
 import static com.uet.towerdefense.Constants.BASE_SPEED;
 
 public class BossEnemy extends Enemy {
-  BossEnemy(ViewGroup parent) {
+  public BossEnemy(ViewGroup parent) {
     super(parent);
   }
 
