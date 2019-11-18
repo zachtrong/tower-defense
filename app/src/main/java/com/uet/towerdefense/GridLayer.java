@@ -13,6 +13,7 @@ import com.uet.towerdefense.tower.PlaceholderTower;
 import com.uet.towerdefense.tower.Tower;
 import com.uet.towerdefense.util.Point;
 
+import java.util.HashSet;
 
 
 public class GridLayer {
@@ -20,6 +21,8 @@ public class GridLayer {
   private Handler handler = new Handler(Looper.getMainLooper());
   private double per100Width, per100Height;
   private Consumer<Tower> callbackTower;
+  private HashSet<Enemy> enemies = new HashSet<>();
+  private HashSet<Tower> towers = new HashSet<>();
 
   GridLayer(FrameLayout parent, Consumer<Tower> callbackTower) {
     this.parent = parent;
@@ -46,10 +49,9 @@ public class GridLayer {
   }
 
   void addEnemy(Enemy enemy) {
+    enemies.add(enemy);
     parent.addView(enemy.getView());
-    enemy.setX(0);
-    enemy.setY((int) (28 * per100Height));
-    enemy.applyMove();
+    enemy.setPosition(new Point(0, (int) 28 * per100Height));
   }
 
   public void moveEnemyWithDirectionStart(Enemy enemy) {
@@ -79,47 +81,48 @@ public class GridLayer {
   }
 
   private EnemyDirection changeEnemyDirection(Enemy enemy, EnemyDirection direction) {
-    if(enemy.getX()>=18.28*per100Width -1 && enemy.getX()<=18.29*per100Width+1)
+    Point position = enemy.getPosition();
+    if(position.getX()>=18.28*per100Width -1 && position.getX()<=18.29*per100Width+1)
     {
-      if(enemy.getY()<80.55*per100Height)
+      if(position.getY()<80.55*per100Height)
       {
         return EnemyDirection.DOWN;
       }
     }
 
-    if(enemy.getY()>=80.55*per100Height-2&&enemy.getY()<=80.56*per100Height+2)
+    if(position.getY()>=80.55*per100Height-2&&position.getY()<=80.56*per100Height+2)
     {
-      if(enemy.getX()<33.2*per100Width)
+      if(position.getX()<33.2*per100Width)
       {
         return EnemyDirection.RIGHT;
       }
     }
 
-    if(enemy.getX()>=33.2*per100Width-2&&enemy.getX()<=33.3*per100Width+2)
+    if(position.getX()>=33.2*per100Width-2&&position.getX()<=33.3*per100Width+2)
     {
-      if(enemy.getY()>6.94*per100Height)
+      if(position.getY()>6.94*per100Height)
       {
         return EnemyDirection.UP;
       }
     }
 
-    if(enemy.getY()>=6.94*per100Height-2&&enemy.getY()<=6.95*per100Height+2)
+    if(position.getY()>=6.94*per100Height-2&&position.getY()<=6.95*per100Height+2)
     {
-      if(enemy.getX()<84.76*per100Width)
+      if(position.getX()<84.76*per100Width)
       {
        return EnemyDirection.RIGHT;
       }
     }
 
-    if(enemy.getX()>=84.76*per100Width-2&&enemy.getX()<=84.76*per100Width+2)
+    if(position.getX()>=84.76*per100Width-2&&position.getX()<=84.76*per100Width+2)
     {
-      if(enemy.getY()<38.19*per100Height)
+      if(position.getY()<38.19*per100Height)
       {
         return EnemyDirection.DOWN;
       }
     }
 
-    if(enemy.getY()>=38.19*per100Height-2&&enemy.getY()<=38.19*per100Height+2)
+    if(position.getY()>=38.19*per100Height-2&&position.getY()<=38.19*per100Height+2)
     {
         return EnemyDirection.RIGHT;
     }

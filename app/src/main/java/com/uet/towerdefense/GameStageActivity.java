@@ -31,11 +31,11 @@ public class GameStageActivity extends BaseActivity {
   protected void setupListener() {
     startButton.setOnClickListener(
         view -> {
-          startActivity(new Intent(this, GameFieldActivity.class));
+          startActivity(new Intent(this, CustomGameFieldActivity.class));
         });
     highScoreButton.setOnClickListener(
         view -> {
-          startActivity(new Intent(this, CustomGameFieldActivity.class));
+          startActivity(new Intent(this, HighScoreActivity.class));
         });
     guideButton.setOnClickListener(
          view -> {

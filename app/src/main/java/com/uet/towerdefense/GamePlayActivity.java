@@ -63,15 +63,6 @@ public class GamePlayActivity extends BaseActivity {
   protected void populateData() {}
 
   public void startMonster() {
-    CountDownTimer countDownTimer =
-        new CountDownTimer(3000000, 30000) {
-          @Override
-          public void onTick(long millisUntilFinished) {
-          }
-
-          @Override
-          public void onFinish() {}
-        }.start();
   }
 
   private void buyTower(ImageButton imageButton) {
