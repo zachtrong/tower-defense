@@ -7,6 +7,7 @@ public class Constants {
   public static final int BASE_FIRE_DAMAGE = 100;
   public static final int BASE_AMOUNT_HEALTH_ARMOR = 100;
   public static final int BASE_REWARD = 100;
+  public static final int DISTANCE_IN_RANGE = 500;
 
   @Deprecated
   public static int SCREEN_WIDTH =0;

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.core.util.Consumer;
 
+import com.uet.towerdefense.bullet.Bullet;
 import com.uet.towerdefense.enemy.BossEnemy;
 import com.uet.towerdefense.enemy.Enemy;
 import com.uet.towerdefense.enemy.EnemyDirection;
@@ -96,8 +97,10 @@ public class CustomGameFieldActivity extends BaseActivity {
         enemy = new NormalEnemy(gameFieldLayout);
         break;
     }
+
     gridLayer.addEnemy(enemy);
     gridLayer.moveEnemyWithDirectionStart(enemy);
+
   }
 
   private void buyTower() {
