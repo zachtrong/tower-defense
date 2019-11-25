@@ -31,11 +31,12 @@ public class GridLayer {
   private Consumer<Tower> callbackTower;
   private HashSet<Enemy> enemies = new HashSet<>();
   private HashSet<Tower> towers = new HashSet<>();
+  private HashSet<Bullet> bullets = new HashSet<>();
   private HashSet<Pair<Enemy, Tower>> pairsInRange = new HashSet<>();
   private long lastTimeScanInRange = System.currentTimeMillis() / 1000;
 
   GridLayer(FrameLayout parent, Consumer<Tower> callbackTower) {
-    this.parent = parent;
+    this.parent = parent;;
     this.callbackTower = callbackTower;
 
     per100Width = ScreenSizeManager.getInstance().getPer100Width();
@@ -67,13 +68,15 @@ public class GridLayer {
     enemies.add(enemy);
   }
 
-  private void addBullet(Tower tower, Enemy enemy) {
+  private void
+  addBullet(Tower tower, Enemy enemy) {
     Bullet bullet = new Bullet(parent);
 
     parent.addView(bullet.getView());
     bullet.setPosition(tower.getPosition());
 
     moveBullet(tower, enemy, bullet);
+    bullets.add(bullet);
   }
 
   /**
@@ -84,8 +87,9 @@ public class GridLayer {
    * @param bullet Bullet
    */
   private void moveBullet(Tower tower, Enemy enemy, Bullet bullet) {
-    if (Util.distance(enemy.getPosition(), bullet.getPosition()) < 1) {
+    if (Util.distance(enemy.getPosition(), bullet.getPosition()) < 10) {
       pairsInRange.remove(new Pair<>(enemy, tower));
+      checkHandlingCollisionsBulletAndEnemy();
       return;
     }
 
@@ -93,15 +97,15 @@ public class GridLayer {
     double distanceY = enemy.getPosition().getY() - tower.getPosition().getY();
 
     Point position = bullet.getPosition();
-    position.setX(position.getX() + (distanceX * 0.01));
-    position.setY(position.getY() + (distanceY * 0.01));
+    position.setX(position.getX() + (distanceX * 0.08));
+    position.setY(position.getY() + (distanceY * 0.08));
     bullet.setPosition(position);
 
     handler.postDelayed(
-        () -> {
-          moveBullet(tower, enemy, bullet);
-        },
-        10);
+            () -> {
+              moveBullet(tower, enemy, bullet);
+            },
+            10);
   }
 
   public void moveEnemyWithDirectionStart(Enemy enemy) {
@@ -126,8 +130,8 @@ public class GridLayer {
 
     EnemyDirection newDirection = changeEnemyDirection(enemy, direction);
     handler.postDelayed(
-        () -> moveEnemyWithDirection(enemy, newDirection),
-        (int) (Constants.DEFAULT_DELAY_MS * (1 - enemy.getMovingSpeed() * 1f / 100)));
+            () -> moveEnemyWithDirection(enemy, newDirection),
+            (int) (Constants.DEFAULT_DELAY_MS * (1 - enemy.getMovingSpeed() * 1f / 100)));
 
     checkTowerEnemyInRange();
   }
@@ -159,6 +163,31 @@ public class GridLayer {
     return false;
   }
 
+  public void checkHandlingCollisionsBulletAndEnemy()
+  {
+    for (Bullet bullet : bullets)
+    {
+
+      for (Enemy enemy : enemies)
+      {
+        if (handlingCollisionsBulletAndEnemy(bullet,enemy))
+        {
+          parent.removeView(bullet.getView());
+          parent.removeView(enemy.getView());
+        }
+      }
+    }
+  }
+
+  public boolean handlingCollisionsBulletAndEnemy(Bullet bullet, Enemy enemy)
+  {
+    if(Util.distance(bullet.getPosition(),enemy.getPosition())<=Constants.DISTANCE_COLLISION_BULEET_AND_ENEMY)
+    {
+      return true;
+    }
+    return false;
+  }
+
   private EnemyDirection changeEnemyDirection(Enemy enemy, EnemyDirection direction) {
     Point position = enemy.getPosition();
     if (position.getX() >= 18.28 * per100Width - 1 && position.getX() <= 18.29 * per100Width + 1) {
@@ -168,7 +197,7 @@ public class GridLayer {
     }
 
     if (position.getY() >= 80.55 * per100Height - 2
-        && position.getY() <= 80.56 * per100Height + 2) {
+            && position.getY() <= 80.56 * per100Height + 2) {
       if (position.getX() < 33.2 * per100Width) {
         return EnemyDirection.RIGHT;
       }
@@ -193,7 +222,7 @@ public class GridLayer {
     }
 
     if (position.getY() >= 38.19 * per100Height - 2
-        && position.getY() <= 38.19 * per100Height + 2) {
+            && position.getY() <= 38.19 * per100Height + 2) {
       return EnemyDirection.RIGHT;
     }
     return direction;
